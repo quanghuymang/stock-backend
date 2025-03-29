@@ -11,10 +11,16 @@ import pandas as pd
 from flask import Response
 
 app = Flask(__name__)
+
 CORS(app)
 
 # Cấu hình kết nối MySQL (bạn cần sửa user/pass/dbname cho phù hợp)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/stock_predictor'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/stock_predictor'
+
+#db online 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql12770258:LsK7Hvu3nm@sql12.freesqldatabase.com/sql12770258'
+
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
